@@ -39,7 +39,45 @@ Fasting Blood Sugar: The individual's fasting blood sugar level.
 CRP Level: The C-reactive protein level (a marker of inflammation).
 Homocysteine Level: The individual's homocysteine level (an amino acid that affects blood vessel health).
 Heart Disease Status: The individual's heart disease status (Yes or No).
+## Database Schema (ERD)
+```mermaid
 
+erDiagram
+    PATIENTS {
+        int patient_id PK 
+    }
+    GENETICS{
+        int genetics_id PK 
+        int patient_id FK 
+        int Genetics_Age
+        string Genetics_Gender
+    }
+
+    HABITS {
+        int habit_id PK 
+        int patient_id FK
+        string Habits_Smoking
+        string Habits_Exercise
+        string Habits_Alcohol
+        string Habits_Diet
+    }
+
+    OUTCOMES {
+        int outcome_id PK 
+        int patient_id FK 
+        int Outcomes_Blood_Pressure
+        boolean Outcomes_High_BP
+        int Outcomes_Cholesterol
+        boolean Outcomes_High_LDL
+        boolean Outcomes_Low_HDL
+        boolean Outcomes_Heart_Disease
+    }
+    
+    PATIENTS ||--|| GENETICS : "has"
+    PATIENTS ||--o{ HABITS : "practices"
+    PATIENTS ||--o{ OUTCOMES : "records"
+
+```
 ## How to use
 
 import pandas as pd, data = pd.read_csv('../Data/heart.csv') , ('../Data/heart_disease.csv')
