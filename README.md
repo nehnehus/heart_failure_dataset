@@ -1,6 +1,6 @@
 # Project-Title
 
-Heart Failure
+Heart Health Study
 
 ## Data Overview
 
@@ -48,5 +48,6 @@ import pandas as pd, data = pd.read_csv('../Data/heart.csv') , ('../Data/heart_d
 
 Datasets used from: Kaggle
 heart_failure(https://www.kaggle.com/datasets/fedesoriano/heart-failure-prediction), heart_disease(https://www.kaggle.com/datasets/oktayrdeki/heart-disease)
-Used AI to research,
-Google copilot as an educator enhancer
+
+I used AI to research, specifically utilizing
+Google Gemini and Mirosoft Copilot as an educator enhancer.
